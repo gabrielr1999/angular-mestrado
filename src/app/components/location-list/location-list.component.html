@@ -1,0 +1,19 @@
+<!-- src/app/components/location-list/location-list.component.html -->
+<div class="location-list">
+    <div class="header">
+      <h2>Locations</h2>
+    </div>
+    <ul class="location-items">
+      <li *ngFor="let location of locations" class="location-item">
+        <h3>{{ location.name }}</h3>
+        <p>Type: {{ location.type }}</p>
+        <p>Dimension: {{ location.dimension }}</p>
+        <p>Residents: {{ location.residents.length }}</p>
+      </li>
+    </ul>
+    <div class="pagination">
+      <button (click)="handlePrevPage()" [disabled]="!info.prev" class="page-btn">Previous</button>
+      <button (click)="handleNextPage()" [disabled]="!info.next" class="page-btn">Next</button>
+    </div>
+  </div>
+  
